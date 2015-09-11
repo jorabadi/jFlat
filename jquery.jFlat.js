@@ -119,6 +119,12 @@
 					u(n, i.mouseup, r)
 				})
 			}
-		})
+		}).each(function() {
+			if(this.complete) {
+				$(this).load();
+		    } else if(this.error) {
+		    	$(this).error();
+		    }
+		}); //fix in chrome with cached images
 	}
 })(jQuery)
